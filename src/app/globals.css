@@ -1,0 +1,268 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   Design tokens — palette & type
+   ───────────────────────────────────────────── */
+@theme {
+  --color-espresso: #1a110b;
+  --color-coffee: #3b2416;
+  --color-coffee-light: #5a3a26;
+  --color-charcoal: #232020;
+  --color-cream: #f4eadb;
+  --color-parchment: #e6d5bc;
+  --color-muted: #b9a68c;
+  --color-ember: #d9572b;
+  --color-terracotta: #b4452a;
+  --color-gold: #e3a33b;
+  /* Wolaita textile accents — decorative only */
+  --color-wol-red: #c8281e;
+  --color-wol-yellow: #e8b530;
+  --color-wol-green: #1f6b3a;
+  --color-wol-black: #111111;
+
+  --font-display: var(--font-fraunces), var(--font-ethiopic-serif), Georgia, serif;
+  --font-sans: var(--font-inter), var(--font-ethiopic-sans), system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* ─────────────────────────────────────────────
+   Base
+   ───────────────────────────────────────────── */
+html {
+  background: var(--color-espresso);
+  color: var(--color-cream);
+  -webkit-text-size-adjust: 100%;
+  scrollbar-color: var(--color-coffee-light) var(--color-espresso);
+}
+body {
+  font-family: var(--font-sans);
+  background: var(--color-espresso);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection {
+  background: var(--color-ember);
+  color: var(--color-cream);
+}
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Amharic: Latin glyphs stay in Fraunces/Inter; Ethiopic glyphs fall through to Noto Ethiopic.
+   Ethiopic needs a bit more line height and no negative tracking. */
+html[lang="am"] .font-display {
+  letter-spacing: 0 !important;
+  line-height: 1.15;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+/* Fluid editorial type scale */
+.text-mega { font-size: clamp(3.2rem, min(12vw, 15vh), 11rem); line-height: 0.88; letter-spacing: -0.035em; }
+.text-huge { font-size: clamp(2.6rem, 8vw, 7.5rem); line-height: 0.95; letter-spacing: -0.03em; }
+.text-big { font-size: clamp(2rem, 5vw, 4.5rem); line-height: 1; letter-spacing: -0.02em; }
+html[lang="am"] .text-mega { font-size: clamp(2.6rem, 9vw, 8.5rem); }
+html[lang="am"] .text-huge { font-size: clamp(2.1rem, 6vw, 5.5rem); }
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-weight: 600;
+}
+html[lang="am"] .eyebrow { letter-spacing: 0.05em; font-size: 0.85rem; }
+
+.container-x {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 3.5rem);
+}
+.section-y { padding-block: clamp(5rem, 12vw, 10rem); }
+
+/* ─────────────────────────────────────────────
+   Texture: film grain + vignette (fixed overlays)
+   ───────────────────────────────────────────── */
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: -50%;
+  z-index: 90;
+  opacity: 0.07;
+  background-image: url("/grain.png");
+  animation: grain 1.2s steps(6) infinite;
+}
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, 2%); }
+  40% { transform: translate(2%, -3%); }
+  60% { transform: translate(-2%, -1%); }
+  80% { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+.vignette {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 89;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(10, 6, 3, 0.55) 100%);
+}
+
+/* ─────────────────────────────────────────────
+   Wolaita textile stripe (decorative divider)
+   ───────────────────────────────────────────── */
+.textile {
+  height: 10px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-wol-red) 0 18px,
+    var(--color-wol-black) 18px 22px,
+    var(--color-wol-yellow) 22px 30px,
+    var(--color-wol-black) 30px 34px,
+    var(--color-wol-green) 34px 52px,
+    var(--color-wol-black) 52px 56px,
+    var(--color-wol-yellow) 56px 60px,
+    var(--color-wol-black) 60px 64px
+  );
+}
+.textile-thin { height: 4px; opacity: 0.85; }
+
+/* ─────────────────────────────────────────────
+   Micro-interactions
+   ───────────────────────────────────────────── */
+/* Animated link underline */
+.link-u {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s var(--ease-out-expo);
+}
+.link-u:hover,
+.link-u:focus-visible {
+  background-size: 100% 1px;
+  background-position: 0 100%;
+}
+
+/* Image hover zoom + warm light sweep */
+.img-sweep { position: relative; overflow: hidden; isolation: isolate; }
+.img-sweep img { transition: transform 1.2s var(--ease-out-expo), filter 0.8s; }
+.img-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 190, 120, 0.28) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 1.1s var(--ease-out-expo);
+}
+@media (hover: hover) {
+  .img-sweep:hover img { transform: scale(1.06); }
+  .img-sweep:hover::after { transform: translateX(120%); }
+}
+
+/* Intro reveals — CSS only (no JS wait → fast LCP).
+   First visit: lines start part-way up *underneath* the preloader (so they paint at once),
+   then finish rising as the preloader lifts. Repeat visits: a full reveal from below. */
+.reveal-line > span { --from: 55%; animation: line-up 1.3s var(--ease-out-expo) both; animation-delay: calc(1.35s + var(--i, 0) * 0.12s); }
+.hero-fade { animation: fade-up 1s var(--ease-out-expo) both; animation-delay: calc(1.6s + var(--i, 0) * 0.08s); }
+.intro-seen .reveal-line > span { --from: 110%; animation-delay: calc(0.1s + var(--i, 0) * 0.12s); }
+.intro-seen .hero-fade { animation-delay: calc(0.45s + var(--i, 0) * 0.08s); }
+@keyframes line-up { from { transform: translateY(var(--from)); } to { transform: translateY(0); } }
+@keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@keyframes scrollcue {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+
+/* Page transition (template.tsx): curtain sweeps up, content fades in */
+.page-curtain { transform-origin: top; animation: curtain-up 0.7s cubic-bezier(0.76, 0, 0.24, 1) 0.05s both; }
+.page-enter { animation: page-in 0.6s ease 0.25s both; }
+@keyframes curtain-up { from { transform: scaleY(1); } to { transform: scaleY(0); } }
+@keyframes page-in { from { opacity: 0; } }
+
+/* Scroll reveals (components/ui/Reveal.tsx). Hidden only when JS runs, so no-JS visitors see everything. */
+.js [data-reveal] {
+  transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0s);
+}
+.js [data-reveal="fade"]:not([data-in]) { opacity: 0; transform: translateY(40px); }
+.js [data-reveal="slide"]:not([data-in]) { transform: translateY(40px); }
+
+/* Expanding panel without measuring height (TwoGates) */
+.expand { display: grid; grid-template-rows: 0fr; opacity: 0; visibility: hidden; transition: grid-template-rows 0.6s var(--ease-out-expo), opacity 0.6s var(--ease-out-expo), visibility 0s 0.6s; }
+.expand > * { min-height: 0; overflow: hidden; }
+.expand.is-open { grid-template-rows: 1fr; opacity: 1; visibility: visible; transition-delay: 0s; }
+
+/* Marquee */
+.marquee-track { display: flex; width: max-content; will-change: transform; }
+
+/* Hide scrollbar for horizontal swipers on mobile */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* CSS-only steam for the static hero fallback */
+.css-steam span {
+  position: absolute;
+  bottom: 0;
+  width: 60px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(244, 234, 219, 0.35), transparent 70%);
+  filter: blur(14px);
+  animation: steam 5s ease-in infinite;
+  opacity: 0;
+}
+.css-steam span:nth-child(2) { left: 30px; animation-delay: 1.6s; }
+.css-steam span:nth-child(3) { left: -20px; animation-delay: 3.2s; }
+@keyframes steam {
+  0% { transform: translateY(0) scaleX(0.6); opacity: 0; }
+  20% { opacity: 0.9; }
+  100% { transform: translateY(-220px) scaleX(1.6) rotate(8deg); opacity: 0; }
+}
+
+/* Preloader — CSS safety net: always disappears even if JS fails */
+.preloader { animation: preloader-out 0.5s var(--ease-in-out-quart) 1.35s forwards; }
+@keyframes preloader-out { to { transform: translateY(-100%); visibility: hidden; } }
+
+/* Sticky mobile action bar sits above the iOS home indicator */
+.safe-bottom { padding-bottom: max(0.6rem, env(safe-area-inset-bottom)); }
+
+/* Custom cursor only when JS enables it */
+html.has-cursor, html.has-cursor a, html.has-cursor button { cursor: none; }
+
+/* ─────────────────────────────────────────────
+   Lenis smooth scroll
+   ───────────────────────────────────────────── */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
+
+/* ─────────────────────────────────────────────
+   Reduced motion
+   ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .grain { animation: none; }
+  .preloader { display: none; }
+  .reveal-line > span, .hero-fade { animation: none !important; }
+  .page-curtain { display: none; }
+  .page-enter { animation: none !important; }
+  .js [data-reveal]:not([data-in]) { opacity: 1; transform: none; }
+}

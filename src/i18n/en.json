@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "title": "{name} — Cafe & Restaurant in Wolaita Sodo",
+    "description": "A popular cafe and restaurant beside the main road in central Wolaita Sodo, Ethiopia. Authentic Wolaita raw meat (ጥሬ ስጋ), Shekla Tibs, Kitfo, coffee and more. Open daily 7 AM – 9 PM. Rated 4.7 on Google.",
+    "keywords": "cafe in Wolaita Sodo, restaurant Wolaita Sodo, Wolaita raw meat, kitfo Wolaita Sodo, Shekla Tibs Sodo, Ethiopian restaurant Sodo, ወላይታ ሶዶ ክትፎ ቤት, ጥሬ ስጋ ሶዶ",
+    "pages": {
+      "menu": { "title": "Menu", "description": "The Road House menu: Wolaita raw meat (ጥሬ ስጋ), Shekla Tibs, Kitfo, Ranger, coffee, tea, beer and wine in Wolaita Sodo." },
+      "gallery": { "title": "Gallery", "description": "Photos of the food, coffee and spaces at {name}, Wolaita Sodo." },
+      "about": { "title": "About", "description": "The story of {name} — two gates, one house, beside the main road in Wolaita Sodo." },
+      "visit": { "title": "Visit & Contact", "description": "Find {name} near the stadium in Wolaita Sodo. Open daily 7 AM – 9 PM. Call +251 91 106 9024." }
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "gallery": "Gallery",
+    "about": "About",
+    "visit": "Visit",
+    "openMenu": "Open navigation",
+    "closeMenu": "Close navigation",
+    "skip": "Skip to content",
+    "call": "Call",
+    "directions": "Directions",
+    "foodMenu": "Menu",
+    "language": "Language",
+    "switchTo": "አማርኛ",
+    "switchToLabel": "Switch to Amharic"
+  },
+  "status": {
+    "open": "Open now",
+    "closed": "Closed",
+    "closesAt": "until 9:00 PM",
+    "opensAt": "opens 7:00 AM"
+  },
+  "preloader": { "label": "Loading Road House" },
+  "hero": {
+    "eyebrow": "Wolaita Sodo · Ethiopia",
+    "tagline": "Serving the best Wolaita ጥሬ ስጋ.",
+    "sub": "A popular dining and social spot right beside the main road in the centre of Wolaita Sodo — authentic Ethiopian and Wolaita cuisine, fresh coffee, and an atmosphere that invites you to stay.",
+    "ctaMenu": "Explore the menu",
+    "ctaVisit": "Find us",
+    "scroll": "Scroll"
+  },
+  "marquee": ["ጥሬ ስጋ", "Shekla Tibs", "Kitfo", "Coffee", "Ranger", "Tea", "ጥሬ ስጋ", "Shekla Tibs", "Kitfo", "Coffee"],
+  "gates": {
+    "eyebrow": "Two gates · One house",
+    "title": "Choose your gate.",
+    "intro": "The cafe and the restaurant each have their own well-designed gate and space — casual, cozy and trendy, side by side.",
+    "hint": "Hover or tap a side to open it",
+    "cafe": {
+      "label": "Gate 01 — The Cafe",
+      "title": "Road House Cafe",
+      "text": "Coffee, tea and easy conversation. A casual, cozy corner for slow mornings and catch-ups.",
+      "cta": "Coffee & drinks"
+    },
+    "restaurant": {
+      "label": "Gate 02 — The Restaurant",
+      "title": "Kunspagna",
+      "text": "Authentic Ethiopian and Wolaita cuisine — from Wolaita ጥሬ ስጋ to Shekla Tibs and Kitfo.",
+      "cta": "Food menu"
+    }
+  },
+  "dishes": {
+    "eyebrow": "Signature dishes",
+    "title": "The plates Sodo comes back for.",
+    "cta": "See the full menu",
+    "items": {
+      "kurt": { "name": "Wolaita Raw Meat", "native": "ጥሬ ስጋ · Kurt", "text": "The house signature. Our motto says it plainly: serving the best Wolaita ጥሬ ስጋ." },
+      "shekla": { "name": "Shekla Tibs", "native": "ሸክላ ጥብስ", "text": "Tibs brought to the table still sizzling in a clay shekla." },
+      "kitfo": { "name": "Kitfo", "native": "ክትፎ", "text": "Ethiopia's beloved minced-beef classic." },
+      "ranger": { "name": "Ranger", "native": "ሬንጀር", "text": "[DISH DESCRIPTION - CONFIRM WITH OWNER]" }
+    }
+  },
+  "ceremony": {
+    "eyebrow": "The Ethiopian coffee ceremony",
+    "title": "Roast. Brew. Serve.",
+    "intro": "Coffee in Ethiopia is a ritual, not a rush.",
+    "steps": [
+      { "title": "Roasting", "num": "01", "text": "Green beans are roasted over the flame until they crackle and darken, filling the room with aroma." },
+      { "title": "Brewing", "num": "02", "text": "The fresh grounds are brewed in a clay jebena until the coffee rises — rich, dark and strong." },
+      { "title": "Serving", "num": "03", "text": "Poured from a height into small cups and shared. Sit down, slow down, stay a while." }
+    ]
+  },
+  "rating": {
+    "eyebrow": "Loved by guests",
+    "title": "Rated {value} on Google",
+    "outOf": "out of 5",
+    "basedOn": "from {count} Google reviews",
+    "cta": "Read our reviews on Google"
+  },
+  "visit": {
+    "eyebrow": "Visit us",
+    "title": "Find the house by the road.",
+    "address": "Address",
+    "plusCode": "Plus code",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "hours": "Hours",
+    "hoursValue": "Monday – Sunday",
+    "hoursTime": "7:00 AM – 9:00 PM",
+    "phone": "Phone",
+    "call": "Call us",
+    "directions": "Get directions",
+    "mapLoad": "Show interactive map",
+    "mapNote": "Loads Google Maps",
+    "mapTitle": "Map showing the location of {name}",
+    "services": "Services",
+    "serviceList": {
+      "dineIn": "Dine-in",
+      "outdoor": "Outdoor seating",
+      "takeout": "Takeout",
+      "drive": "Drive-through",
+      "parking": "Free parking"
+    },
+    "bestTime": "Best time to visit",
+    "bestTimeText": "We're busiest around 5 PM. Guests typically stay 45 minutes to 2 hours — come a little earlier for a quieter table."
+  },
+  "footer": {
+    "tagline": "Roadside warmth, modern Wolaita.",
+    "follow": "Follow",
+    "contact": "Contact",
+    "explore": "Explore",
+    "rights": "All rights reserved.",
+    "instagramFollowers": "{count} followers"
+  },
+  "menuPage": {
+    "eyebrow": "Eat & drink",
+    "title": "The Menu",
+    "intro": "Authentic Ethiopian and Wolaita food, coffee, tea, beer and wine. Prices and the full list are being finalised — call us to ask about today's menu.",
+    "all": "All",
+    "priceTbc": "[PRICE]",
+    "currency": "ETB",
+    "filterLabel": "Filter menu by category",
+    "signature": "Signature"
+  },
+  "galleryPage": {
+    "eyebrow": "Gallery",
+    "title": "Inside the house",
+    "intro": "Food, coffee and the spaces of Road House. Placeholder images — real photos coming soon.",
+    "close": "Close",
+    "prev": "Previous image",
+    "next": "Next image",
+    "counter": "Image {n} of {total}",
+    "open": "Open image"
+  },
+  "aboutPage": {
+    "eyebrow": "About",
+    "title": "Two gates. One house.",
+    "intro": "{name} is a popular dining and social spot right next to the main road in the centre of Wolaita Sodo, known for authentic Ethiopian and Wolaita cuisine and an inviting atmosphere.",
+    "storyTitle": "Our story",
+    "story": "[OWNER'S STORY - CONFIRM WITH OWNER] How Road House began, who runs it, and what makes it special.",
+    "spaceTitle": "The space",
+    "space": "Casual, cozy and trendy — with separate, well-designed gates and spaces for the cafe and the restaurant, plus outdoor seating and free parking.",
+    "valuesTitle": "What we're known for",
+    "values": ["Wolaita ጥሬ ስጋ", "Authentic Ethiopian cuisine", "Coffee & tea", "A place to meet"]
+  },
+  "visitPage": {
+    "eyebrow": "Contact & visit",
+    "title": "Come by. Call ahead. Stay a while.",
+    "whatsapp": "WhatsApp",
+    "socialTitle": "Find us online"
+  },
+  "cursor": { "taste": "Taste", "view": "View" },
+  "common": {
+    "placeholderImage": "Placeholder image",
+    "backHome": "Back home",
+    "notFound": "This page wandered off the road."
+  }
+}
